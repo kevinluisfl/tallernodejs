@@ -21,7 +21,7 @@ const GameSchema = new Schema(
             type: Object
         },
         gamerBet: {
-            type: [{}]
+            type: Object
         },
     },
     {timestamps: true}
