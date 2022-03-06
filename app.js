@@ -23,12 +23,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require('./routes/index'));
-
-app.use('/creategame', require('./routes/index'));
-app.use('/create-game', require('./routes/createGame'));
-app.use('/status', require('./routes/gameStatus'));
-app.use('/winner', require('./routes/winner'));
+app.use('/createGame', require('./routes/createGame'));
 app.use('/startgame', require('./routes/startGame'));
+app.use('/game', require('./routes/game'));
+app.use('/winner', require('./routes/winner'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

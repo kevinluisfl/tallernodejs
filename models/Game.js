@@ -4,12 +4,13 @@ const mongooseSoftDelete = require('mongoose-delete');
 
 const GameSchema = new Schema(
     {
+        type: {
+            type: String
+        },
         gamers: [
             {
                 id: Schema.ObjectId,
                 name: String,
-                trim: true,
-                required: true
             }
         ],
         inProgress: {

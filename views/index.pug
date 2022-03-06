@@ -4,12 +4,12 @@ block content
   h1= title
   p Welcome to #{title}
 
-  form(action='/create-game' method="POST")
-    h1= "Juego de dados"
+  form(action='/createGame' method="POST")
+    h1= "Juego dados"
 
     div
-      input(type="text" name="name1" placeholder="Jugador 1" required)
-      input(type="text" name="name2" placeholder="Jugador 2" required)
-      input(type="text" name="name3" placeholder="Jugador 3" required)
+      input(type="text" name="player" placeholder="Jugador 1" required)
+      input(type="text" name="player" placeholder="Jugador 2" required)
+      input(type="text" name="player" placeholder="Jugador 3" required)
     div
-      input(type="submit" value="Registrar")
+      input(type="submit" value="Enviar")
