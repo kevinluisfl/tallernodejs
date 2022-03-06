@@ -24,16 +24,11 @@ router.put('/:id', async (req,res,next)=>{
         console.log(game.gamers)
         const gamersGame = game.gamers;
         gamersGame.forEach(gamer => {
-            // console.log(gamer.name);
-            // console.log(gamer._id);
-            // console.log(generateRandom(min,max));
             betGamer[gamer._id] = generateRandom(min, max);
             bets.push(betGamer);
-            console.log(bets);
         });
 
-        game.set({ "gamerBet": bets[0], "inProgress": true});
-        const result = await game.save();
+        const result = await game.set({ "gamerBet": bets[0], "inProgress": true}).save();
         res.json(result);
 
     } catch (error) {

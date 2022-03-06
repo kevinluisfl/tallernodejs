@@ -10,10 +10,6 @@ router.get('/', (req, res, next) =>{
 router.post('/', (req,res,next)=>{
     console.log(req.body.player);
     try {
-        // const game = new Game({
-        //     gamers: req.body.player
-        // })
-        // game.save()
         const {player} = req.body;
         const gamers =[
             {name:player[0]},
