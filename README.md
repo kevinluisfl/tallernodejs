@@ -9,21 +9,21 @@ Se ejecuta por defecto en el puerto 3000.
 
 ## Rutas
 
-> "POST"
+> POST
 
 Formulario para crear los juegos con 3 jugadores
 ```
 localhost:3000/createGame
 ```
 
-> "PUT"
+> PUT
 
 Comienza el juego, se busca el juego con el id de la partida, la apuesta ese asigna aleatoriamente
 ```
 localhost:3000/startGame/:id
 ```
 
-> "GET"
+> GET
 
 Consultar todos los juegos registrados
 ```
