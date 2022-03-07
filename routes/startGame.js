@@ -3,12 +3,14 @@ const router = express.Router();
 
 const Game = require('../models/Game');
 
-router.get('/', (req, res, next) =>{
-    res.json("start game");
-  });
+/**
+ * Ruta put para asignar un resultado a cada jugador
+ * usando una funcion para generar valores aleatorios.
+ * @version 1.0.0 2022-03-06
+ * @author Kevin Luis Florez Lozada.
+ */
 
 router.put('/:id', async (req,res,next)=>{
-    console.log(req.body);
     try {
         const idgame = req.params.id;
         const game = await Game.findById(idgame);
@@ -21,7 +23,6 @@ router.put('/:id', async (req,res,next)=>{
             return Math.floor((Math.random() * (max + 1 - min)) + min);
         }
 
-        console.log(game.gamers)
         const gamersGame = game.gamers;
         gamersGame.forEach(gamer => {
             betGamer[gamer._id] = generateRandom(min, max);

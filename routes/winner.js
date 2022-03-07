@@ -3,10 +3,12 @@ const router = express.Router();
 
 const Game = require('../models/Game');
 
-router.get('/', function(req, res, next) {
-    res.json("winner");
-  });
-
+/**
+ *Ruta get para obtener la información del jugador ganador
+ * con base en el resultado aleatorio más alto.
+ * @version 1.0.0 2022-03-06
+ * @author Kevin Luis Florez Lozada.
+ */
 router.get('/:id', async (req, res, next) =>{
     try {
         const idgame = req.params.id;

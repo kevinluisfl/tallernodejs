@@ -5,6 +5,12 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 
+/**
+ * conexión a la base de datos mongo con host local.
+ *
+ * @version 1.0.0 2022-03-06
+ * @author Kevin Luis Florez Lozada.
+ */
 const mongodb = 'mongodb://localhost/tallernodejs';
 mongoose.connect(mongodb, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => console.log('MongoDB connected'))
@@ -12,6 +18,9 @@ mongoose.connect(mongodb, {useNewUrlParser: true, useUnifiedTopology: true})
 
 const app = express();
 
+/**
+ * configuracion de vistas del motor de plantillas
+ */
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -22,9 +31,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/**
+ * todas las rutas funcionales para el juego de dados
+ */
 app.use('/', require('./routes/index'));
 app.use('/createGame', require('./routes/createGame'));
-app.use('/startgame', require('./routes/startGame'));
+app.use('/startGame', require('./routes/startGame'));
 app.use('/game', require('./routes/game'));
 app.use('/winner', require('./routes/winner'));
 

@@ -3,12 +3,23 @@ const router = express.Router();
 
 const Game = require('../models/Game');
 
+/**
+ * Ruta get para mostrar la vista donde esta el formulario.
+ * se renderiza la view index.pug
+ * @version 1.0.0 2022-03-06
+ * @author Kevin Luis Florez Lozada.
+ */
 router.get('/', (req, res, next) =>{
     res.render('index', { title: 'Taller NodeJS' });
   });
 
+/**
+ * Ruta post para crear un juego nuevo
+ * son los nombres de los jugadores.
+ * @version 1.0.0 2022-03-06
+ * @author Kevin Luis Florez Lozada.
+ */
 router.post('/', (req,res,next)=>{
-    console.log(req.body.player);
     try {
         const {player} = req.body;
         const gamers =[
