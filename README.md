@@ -1,5 +1,5 @@
 # Taller practico, NodeJS y MongoDB
-Juego de dados, realizado con nodejs y mongodb.
+Juego de dados, realizado con NodeJS y MongoDB.
 
 ## Funcionamiento
 Ejecutar el comando `npm install` abriendo la consola dentro de la carpeta, para instalar dependencias necesarias.
