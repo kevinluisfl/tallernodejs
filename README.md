@@ -11,14 +11,14 @@ Se ejecuta por defecto en el puerto 3000.
 
 > POST
 
-Formulario para crear los juegos con 3 jugadores
+Formulario para crear un juego con 3 jugadores
 ```
 localhost:3000/createGame
 ```
 
 > PUT
 
-Comienza el juego, se busca el juego con el id de la partida, la apuesta ese asigna aleatoriamente
+Comienza el juego, se busca el juego con el id de la partida, la apuesta se asigna aleatoriamente
 ```
 localhost:3000/startGame/:id
 ```
@@ -39,3 +39,5 @@ Consultar el ganador del juego usando el id de la partida
 ```
 localhost:3000/winner/:id
 ```
+
+> no me funcionaron los render de las otras view

@@ -11,6 +11,7 @@ const Game = require('../models/Game');
  */
 router.get('/', (req, res, next) =>{
     res.render('index', { title: 'Taller NodeJS' });
+    res.end();
   });
 
 /**

@@ -24,6 +24,7 @@ router.get('/:id', async (req, res, next) =>{
             res.json(winner)
             const updateGame = await game.set({"winner": winner, "inProgress": false}).save();
             console.log(updateGame);
+            res.render('winner', {title: 'Winner', winner: winner})
         })
         .catch(err => {
             console.log(err)

@@ -15,6 +15,40 @@ router.get('/', (req, res, next) =>{
         data
         .then(result => {
             res.json(result)
+            /**INFORMACION A RENDERIZAR */
+            const juegos = [];
+            let juego = {
+                idgame:"",
+                progress:"",
+                created:"",
+                winner:"",
+                jugadores:"",
+                apuestas:""
+            };
+
+            // console.log(result)
+            // console.log(result[0].id)
+            // console.log(result[0].inProgress)
+            // console.log(result[0].createdAt)
+            // console.log(result[0].winner)
+            // console.log(result[0].gamers[0].name)
+            // console.log(result[0].gamers)
+            result.forEach(item => {
+                juego = {
+                    idgame:item.id,
+                    progress:item.inProgress,
+                    created:item.createdAt,
+                    winner:item.winner,
+                    jugadores:item.gamers,
+                    apuestas:Object.values(item.gamerBet)
+                };
+                juegos.push(juego);
+            })
+            console.log(juegos);
+            // console.log(juegos[0].jugadores[1].name)
+            // console.log(juegos[0].apuestas[1])
+            res.render('game', { title: 'Taller NodeJS', juegos: juegos });
+            // res.end();
         })
         .catch(err => {
             console.log(err)

@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  h1= "Juegos dados"
+  ul
+  each val, ind in juegos
+    li= val.idgame
+  else
+    li No se han registrado juegos
